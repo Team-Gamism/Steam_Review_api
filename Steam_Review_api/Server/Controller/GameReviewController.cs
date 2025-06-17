@@ -28,7 +28,7 @@ namespace Server.Controller
         }
 
         [HttpPost]
-        public async Task<ActionResult<AddReviewResponse>> AddReview([FromBody] AddReviewRequest req)
+        public async Task<ActionResult<AddReviewResponse>> AddReview([FromBody] AddReviewRequest? req)
         {
             if (req == null)
                 return BadRequest("리뷰 데이터를 확인하세요.");
