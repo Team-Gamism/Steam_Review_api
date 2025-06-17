@@ -65,7 +65,5 @@ namespace Server.Controller
             var games =  await _gameReviewService.GetAllGamesAsync();
             return Ok(games);
         }
-        
-        
     }
 }
