@@ -94,5 +94,18 @@ namespace Server.Controller
             var games = await _gameReviewService.GetAllGamesAsync();
             return Ok(games);
         }
+
+        [HttpGet("game")]
+        public async Task<IActionResult> GetGameStatisticsAsync([FromQuery] string game)
+        {
+            if (string.IsNullOrWhiteSpace(game))
+                return BadRequest("게임 이름을 입력하세요.");
+
+            var stats = await _gameReviewService.GetStatisticsByGameAsync(game);
+            if (stats.TotalReviews == 0)
+                return NotFound($"'{game}'에 대한 리뷰가 없습니다.");
+
+            return Ok(stats);
+        }
     }
 }

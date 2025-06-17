@@ -1,5 +1,4 @@
-﻿using Server.Model;
-using Server.Model.Entity;
+﻿using Server.Model.Entity;
 using Server.Repository.Interface;
 using Server.Service.Interface;
 
@@ -57,5 +56,48 @@ public class GameReviewService : IGameReviewService
             throw new Exception($"이미 존재하는 리뷰 ID 입니다.: {review.ReviewId}");
         
         await _gameReviewRepository.AddNewReviewAsync(review);
+    }
+
+    public async Task<GameReviewStatistics> GetStatisticsByGameAsync(string game)
+    {
+        var reviews = await _gameReviewRepository.GetReviewsByGameAsync(game);
+        var total = reviews.Count();
+
+        int positive = reviews.Count(r => r.Sentiment.Equals("positive", StringComparison.OrdinalIgnoreCase));
+        int neutral = reviews.Count(r => r.Sentiment.Equals("neutral", StringComparison.OrdinalIgnoreCase));
+        int negative = reviews.Count(r => r.Sentiment.Equals("negative", StringComparison.OrdinalIgnoreCase));
+        
+        double avgScore = Math.Round(reviews.Average(r =>
+            r.Sentiment.Equals("positive", StringComparison.OrdinalIgnoreCase) ? 5.0 :
+            r.Sentiment.Equals("neutral", StringComparison.OrdinalIgnoreCase) ? 3.0 : 0.0), 2);
+        
+        if (total == 0)
+        {
+            return new GameReviewStatistics
+            {
+                Game = game,
+                TotalReviews = total,
+                PositiveCount = positive,
+                NeutralCount = neutral,
+                NegativeCount = negative,
+                PositiveRatio = Math.Round(positive / (double)total, 2),
+                NeutralRatio = Math.Round(neutral / (double)total, 2),
+                NegativeRatio = Math.Round(negative / (double)total, 2),
+                AverageSentimentScore = avgScore
+            };
+        }
+        
+        return new GameReviewStatistics
+        {
+            Game = game,
+            TotalReviews = total,
+            PositiveCount = positive,
+            NeutralCount = neutral,
+            NegativeCount = negative,
+            PositiveRatio = positive / (double)total,
+            NeutralRatio = neutral / (double)total,
+            NegativeRatio = negative / (double)total,
+            AverageSentimentScore = avgScore
+        };
     }
 }

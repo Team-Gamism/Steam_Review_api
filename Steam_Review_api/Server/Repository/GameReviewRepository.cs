@@ -54,6 +54,21 @@ public class GameReviewRepository : IGameReviewRepository
         return await connection.QueryFirstOrDefaultAsync<GameReview>(sql, new { ReviewId = reviewId });
     }
 
+    public async Task<IEnumerable<GameReview?>> GetReviewsByGameAsync(string steamId)
+    {
+        const string sql = @"
+        SELECT review_id AS ReviewId, game AS Game, year AS Year, review AS Review,
+               sentiment AS Sentiment, language AS Language
+        FROM game_review_data
+        WHERE game = @SteamId;";
+
+        await using var connection = CreateConnection();
+        await connection.OpenAsync();
+
+        var reviews = await connection.QueryAsync<GameReview>(sql, new { SteamId = steamId });
+        return reviews;
+    }
+
     public async Task<double?> GetAverageSentimentAsync(string game)
     {
         const string sql = @"

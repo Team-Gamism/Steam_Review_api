@@ -10,4 +10,5 @@ public interface IGameReviewService
     Task<double?> GetAverageSentimentAsync(string game);
     Task<IEnumerable<string>> GetAllGamesAsync();
     Task AddNewGameReviewAsync(GameReview review);
+    Task<GameReviewStatistics> GetStatisticsByGameAsync(string game);
 }

@@ -7,6 +7,7 @@ public interface IGameReviewRepository
 {
     Task InsertAsync(IEnumerable<GameReview> gameReview);
     Task<GameReview?> GetByIdAsync(int reviewId);
+    Task<IEnumerable<GameReview?>> GetReviewsByGameAsync(string steamId);
     Task<double?> GetAverageSentimentAsync(string game);
     Task<IEnumerable<string>> GetDistinctGamesAsync();
     Task AddNewReviewAsync(GameReview review);
