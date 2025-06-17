@@ -1,0 +1,13 @@
+name: steam-review-api
+app: dockerfile
+options:
+  ports: "5272"
+  dockerfile: Steam_Review_api/Dockerfile
+  env:
+    - name: DB_CONNECTION
+      value: ""
+  args: []
+context:
+  git:
+    url: https://github.com/Team-Gamism/Steam_Review_api.git
+    branch: main
