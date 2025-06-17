@@ -9,14 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/Model/SentimentSummary.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Repository/GameReviewRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Repository/Interface/IGameReviewRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Service/CsvService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Service/Interface/ICsvService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750127015111</updated>
-      <workItem from="1750127015873" duration="2232000" />
+      <workItem from="1750127015873" duration="2340000" />
     </task>
     <servers />
   </component>
