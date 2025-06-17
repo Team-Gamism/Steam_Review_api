@@ -6,10 +6,10 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /app
 
-COPY *.csproj ./
+COPY Steam_Review_api/Steam_Review_api/Server/*.csproj ./
 RUN dotnet restore
 
-COPY . ./
+COPY Steam_Review_api/Steam_Review_api/Server/ ./
 RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
