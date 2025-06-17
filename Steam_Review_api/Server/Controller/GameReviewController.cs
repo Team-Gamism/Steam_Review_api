@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Server.Model.Entity;
 using Server.Service.Interface;
 
 namespace Server.Controller
@@ -24,6 +25,16 @@ namespace Server.Controller
             return Ok("CSV 데이터가 DB에 저장되었습니다.");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddReview([FromBody] GameReview review)
+        {
+            if (review == null)
+                return BadRequest("리뷰 데이터를 확인하세요.");
+
+            await _gameReviewService.AddNewGameReviewAsync(review);
+            return Ok("리뷰가 추가되었습니다.");
+        }
+        
         [HttpGet]
         public async Task<IActionResult> GetReviewById([FromQuery] int id)
         {
@@ -47,5 +58,14 @@ namespace Server.Controller
 
             return Ok(new { game, averageSentiment = avgSentiment });
         }
+
+        [HttpGet("games")]
+        public async Task<IActionResult> GetAllGamesAsync()
+        {
+            var games =  await _gameReviewService.GetAllGamesAsync();
+            return Ok(games);
+        }
+        
+        
     }
 }

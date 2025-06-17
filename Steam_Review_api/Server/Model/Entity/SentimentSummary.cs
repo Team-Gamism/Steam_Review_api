@@ -1,4 +1,4 @@
-﻿namespace Server.Model;
+﻿namespace Server.Model.Entity;
 
 public class SentimentSummary
 {

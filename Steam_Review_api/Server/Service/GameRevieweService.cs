@@ -1,4 +1,5 @@
 ﻿using Server.Model;
+using Server.Model.Entity;
 using Server.Repository.Interface;
 using Server.Service.Interface;
 
@@ -29,5 +30,16 @@ public class GameRevieweService : IGameReviceService
     public async Task<double?> GetAverageSentimentAsync(string game)
     {
         return await _gameReviewRepository.GetAverageSentimentAsync(game);
+    }
+
+    public async Task<IEnumerable<string>> GetAllGamesAsync()
+    {
+        return await _gameReviewRepository.GetDistinctGamesAsync();
+    }
+
+    public async Task AddNewGameReviewAsync(GameReview review)
+    {
+        await _gameReviewRepository.AddNewReviewAsync(review);
+        ;
     }
 }

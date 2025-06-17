@@ -1,4 +1,5 @@
 ﻿using Server.Model;
+using Server.Model.Entity;
 
 namespace Server.Service.Interface;
 

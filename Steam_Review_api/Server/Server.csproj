@@ -16,6 +16,8 @@
 
     <ItemGroup>
       <Folder Include="Controller\" />
+      <Folder Include="Model\Dto\Request\" />
+      <Folder Include="Model\Dto\Response\" />
     </ItemGroup>
 
 </Project>

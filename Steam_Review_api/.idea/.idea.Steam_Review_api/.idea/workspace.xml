@@ -9,11 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Server/Service/SentimentTypeConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Controller/GameReviewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controller/GameReviewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Model/GameReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Model/Entity/GameReview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Model/SentimentSummary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Model/Entity/SentimentSummary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Repository/GameReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Repository/GameReviewRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Repository/Interface/IGameReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Repository/Interface/IGameReviewRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Service/CsvService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/CsvService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Service/GameReviewMapService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/GameReviewMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Service/GameRevieweService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/GameRevieweService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Service/Interface/ICsvService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/Interface/ICsvService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Service/Interface/IGameReviceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/Interface/IGameReviceService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,44 +34,44 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Sean-mn"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sean-mn&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Sean-mn/Steam_Review_api.git",
-    "accountId": "16636f1e-886b-44f9-a91a-d1a4cb7480e8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sean-mn/Steam_Review_api.git&quot;,
+    &quot;accountId&quot;: &quot;16636f1e-886b-44f9-a91a-d1a4cb7480e8&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2ycHbeTqw5TjI7Kdq0PDgwybDdo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET 실행 설정 프로파일.Server: http.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET 실행 설정 프로파일.Server: http.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET 실행 설정 프로파일.Server: http">
     <configuration name="Server: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Server/Server.csproj" />
@@ -104,7 +111,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750127015111</updated>
-      <workItem from="1750127015873" duration="5162000" />
+      <workItem from="1750127015873" duration="7137000" />
+      <workItem from="1750144120826" duration="115000" />
     </task>
     <servers />
   </component>
