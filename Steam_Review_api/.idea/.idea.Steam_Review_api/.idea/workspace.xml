@@ -9,10 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Steam_Review_api.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Steam_Review_api.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +143,7 @@
       <updated>1750127015111</updated>
       <workItem from="1750127015873" duration="7137000" />
       <workItem from="1750144120826" duration="5373000" />
-      <workItem from="1750161289789" duration="2854000" />
+      <workItem from="1750161289789" duration="3544000" />
     </task>
     <servers />
   </component>
