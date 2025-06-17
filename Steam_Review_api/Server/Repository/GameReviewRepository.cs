@@ -16,18 +16,30 @@ public class GameReviewRepository :  IGameReviewRepository
     
     private MySqlConnection CreateConnection() => new MySqlConnection(_connectionString);
     
-    public async Task InsertAsync(GameReview gameReview)
+    public async Task InsertAsync(IEnumerable<GameReview> gameReviews)
     {
         const string sql = @"
-            INSERT INTO game_reviews (review_id, game, year, review, sentiment, language)
-            VALUES (@ReviewId, @Game, @Year, @Review, @Sentiment, @Language);
-            ";
-        
+        INSERT INTO game_review_data (review_id, game, year, review, sentiment, language)
+        VALUES (@ReviewId, @Game, @Year, @Review, @Sentiment, @Language)
+        ON DUPLICATE KEY UPDATE
+        review = VALUES(review), sentiment = VALUES(sentiment), language = VALUES(language);";
+
         await using var connection = CreateConnection();
         await connection.OpenAsync();
 
-        await connection.ExecuteAsync(sql, gameReview);
+        foreach (var review in gameReviews)
+        {
+            try
+            {
+                await connection.ExecuteAsync(sql, review);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] review_id={review.ReviewId}, game={review.Game}: {ex.Message}");
+            }
+        }
     }
+
 
     public async Task<IEnumerable<GameReview>> GetReviewsByGameAndSentimentAsync(string game, string sentiment)
     {
