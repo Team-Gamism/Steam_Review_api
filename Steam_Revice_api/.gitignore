@@ -1,0 +1,49 @@
+# .NET Core / ASP.NET Core 기본
+bin/
+obj/
+out/
+
+# 사용자별 설정 파일
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio 관련
+.vs/
+.vscode/
+
+# NuGet 패키지 폴더
+packages/
+*.nupkg
+# 프로젝트 내 패키지 캐시
+.nuget/
+
+# 빌드 결과물
+*.dll
+*.exe
+*.pdb
+
+# 로그 파일
+*.log
+
+# Rider IDE
+.idea/
+
+# OS별
+.DS_Store
+Thumbs.db
+
+# 기타
+*.dbmdl
+*.cache
+*.bak
+*.swp
+*.tmp
+
+# 환경 변수 파일 (비밀번호 등 민감정보)
+.env
+appsettings.*.json
+
+# Publish 폴더
+publish/
