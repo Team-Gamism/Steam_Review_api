@@ -84,4 +84,37 @@ public class GameReviewRepository :  IGameReviewRepository
             Negative = (int)result.Negative
         };
     }
+
+    public async Task<GameReview?> GetByIdAsync(int reviewId)
+    {
+        const string sql = @"
+            SELECT review_id AS ReviewId, game AS Game, year AS Year, review AS Review, sentiment AS Sentiment, language AS Language
+            FROM game_review_data
+            WHERE review_id = @ReviewId;";
+
+        await using var connection = CreateConnection();
+        await connection.OpenAsync();
+
+        return await connection.QueryFirstOrDefaultAsync<GameReview>(sql, new { ReviewId = reviewId });
+    }
+
+    public async Task<double?> GetAverageSentimentAsync(string game)
+    {
+        var sql = @"
+            SELECT AVG(
+                CASE 
+                    WHEN Sentiment = 'positive' THEN 5
+                    WHEN Sentiment = 'neutral' THEN 3
+                    WHEN Sentiment = 'negative' THEN 1
+                    ELSE NULL
+                END
+            ) as AverageSentiment
+            FROM game_review_data
+            WHERE game = @Game;";
+        
+        await using var connection = CreateConnection();
+        await connection.OpenAsync();
+
+        return await connection.ExecuteScalarAsync<double?>(sql, new { Game = game });
+    }
 }

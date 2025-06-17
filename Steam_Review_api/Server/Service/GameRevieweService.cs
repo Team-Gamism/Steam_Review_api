@@ -1,4 +1,5 @@
-﻿using Server.Repository.Interface;
+﻿using Server.Model;
+using Server.Repository.Interface;
 using Server.Service.Interface;
 
 namespace Server.Service;
@@ -18,5 +19,15 @@ public class GameRevieweService : IGameReviceService
     {
         var reviews = _csvService.ReadAll(path);
         await _gameReviewRepository.InsertAsync(reviews);
+    }
+
+    public async Task<GameReview?> GetByIdAsync(int id)
+    {
+        return await _gameReviewRepository.GetByIdAsync(id);
+    }
+
+    public async Task<double?> GetAverageSentimentAsync(string game)
+    {
+        return await _gameReviewRepository.GetAverageSentimentAsync(game);
     }
 }
