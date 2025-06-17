@@ -13,6 +13,11 @@
 **/*.jfm
 **/azds.yaml
 **/bin
+obj/
+.vscode/
+.idea/
+*.user
+*.suo
 **/charts
 **/docker-compose*
 **/Dockerfile*
