@@ -96,31 +96,18 @@ public class GameReviewRepository : IGameReviewRepository
         await connection.ExecuteAsync(sql, review);
     }
 
-    public async Task<SentimentSummary> GetSentimentSummaryAsync(string game, int? year)
+    public async Task<bool> ExistReviewIdAsync(int reviewId)
     {
-        var sql = @"
-        SELECT 
-            COUNT(*) AS TotalReviews,
-            SUM(CASE WHEN Sentiment = 'positive' THEN 1 ELSE 0 END) AS Positive,
-            SUM(CASE WHEN Sentiment = 'neutral' THEN 1 ELSE 0 END) AS Neutral,
-            SUM(CASE WHEN Sentiment = 'negative' THEN 1 ELSE 0 END) AS Negative
-        FROM game_review_data
-        WHERE Game = @Game";
-        
-        if (year.HasValue)
-            sql += " AND Year = @Year";
-        
+        const string sql = @"
+        SELECT EXISTS(
+            SELECT 1 
+            FROM game_review_data 
+            WHERE review_id = @ReviewId
+        );";
+    
         await using var connection = CreateConnection();
-        var result = await connection.QuerySingleAsync(sql, new { Game = game, Year = year });
-
-        return new SentimentSummary
-        {
-            Game = game,
-            Year = year,
-            TotalReviews = (int)result.TotalReviews,
-            Positive = (int)result.Positive,
-            Neutral = (int)result.Neutral,
-            Negative = (int)result.Negative
-        };
+        await connection.OpenAsync();
+    
+        return await connection.ExecuteScalarAsync<bool>(sql, new { ReviewId = reviewId });
     }
 }

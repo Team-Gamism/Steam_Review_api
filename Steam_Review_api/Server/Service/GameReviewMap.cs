@@ -1,6 +1,7 @@
 ﻿using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 using Server.Model.Entity;
+using Server.Service;
 
 public sealed class GameReviewMap : ClassMap<GameReview>
 {
@@ -11,9 +12,6 @@ public sealed class GameReviewMap : ClassMap<GameReview>
         Map(m => m.Year).Name("year");
         Map(m => m.Review).Name("review");
         Map(m => m.Language).Name("language");
-
-        Map(m => m.Sentiment)
-            .Name("sentiment")
-            .TypeConverter(new EnumConverter(typeof(SentimentType)));
+        Map(m => m.Sentiment) .Name("sentiment");
     }
 }

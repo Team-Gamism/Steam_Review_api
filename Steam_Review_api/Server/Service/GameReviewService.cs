@@ -5,12 +5,14 @@ using Server.Service.Interface;
 
 namespace Server.Service;
 
-public class GameRevieweService : IGameReviceService
+public class GameReviewService : IGameReviewService
 {
     private readonly IGameReviewRepository _gameReviewRepository;
     private readonly ICsvService _csvService;
+    
+    private static readonly string[] AllowedSentiments = { "positive", "neutral", "negative" };
 
-    public GameRevieweService(IGameReviewRepository gameReviewRepository, ICsvService csvService)
+    public GameReviewService(IGameReviewRepository gameReviewRepository, ICsvService csvService)
     {
         _gameReviewRepository = gameReviewRepository;
         _csvService = csvService;
@@ -39,7 +41,21 @@ public class GameRevieweService : IGameReviceService
 
     public async Task AddNewGameReviewAsync(GameReview review)
     {
+        if (review == null)
+            throw new ArgumentNullException(nameof(review));
+        
+        if (string.IsNullOrWhiteSpace(review.Sentiment))
+            throw new ArgumentException("Sentiment를 입력하세요.");
+        
+        var sentimentLower = review.Sentiment.Trim().ToLowerInvariant();
+        if (!AllowedSentiments.Contains(sentimentLower))
+            throw new ArgumentException($"sentiment 값은 {string.Join(", ", AllowedSentiments)} 중 하나여야 합니다.");
+        
+        review.Sentiment = sentimentLower;
+        
+        if (await _gameReviewRepository.ExistReviewIdAsync(review.ReviewId))
+            throw new Exception($"이미 존재하는 리뷰 ID 입니다.: {review.ReviewId}");
+        
         await _gameReviewRepository.AddNewReviewAsync(review);
-        ;
     }
 }

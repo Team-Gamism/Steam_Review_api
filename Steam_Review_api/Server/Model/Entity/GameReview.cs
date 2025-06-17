@@ -6,13 +6,6 @@ public class GameReview
     public string Game { get; set; }
     public int Year { get; set; }
     public string Review { get; set; }
-    public SentimentType Sentiment { get; set; }
+    public string Sentiment { get; set; }
     public string Language { get; set; }
-}
-
-public enum SentimentType
-{
-    Positive,
-    Neutral,
-    Negative
 }

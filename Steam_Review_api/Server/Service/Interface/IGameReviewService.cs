@@ -3,7 +3,7 @@ using Server.Model.Entity;
 
 namespace Server.Service.Interface;
 
-public interface IGameReviceService
+public interface IGameReviewService
 {
     Task ImportCsvToDb(string path);
     Task<GameReview?> GetByIdAsync(int id);
