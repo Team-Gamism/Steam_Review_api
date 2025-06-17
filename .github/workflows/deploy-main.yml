@@ -30,7 +30,7 @@ jobs:
               dockerfile: Steam_Review_api/Dockerfile
               env:
                 - name: DB_CONNECTION
-                  value: server=amond-server.kro.kr;port=3306;database=박현민;user=Sean-mn;password=1q2w3e4r
+                  value: ${{ secrets.DB_CONNECTION }}
               args: []
             context:
               git:
