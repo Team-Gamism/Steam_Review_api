@@ -1,13 +1,9 @@
-﻿version: '3.8'
-
-services:
+﻿services:
   server:
-    image: server
     build:
-      context: .
-      dockerfile: Server/Dockerfile
+      context: ./Server
+      dockerfile: Dockerfile
     ports:
       - "5272:5272"
-    environment:
-      - ASPNETCORE_URLS=http://+:5272
-      - ConnectionStrings__DbConnection="server=amond-server.kro.kr;port=3306;database=박현민;user=Sean-mn;password=1q2w3e4r"
+    env_file:
+      - ./Server/.env
