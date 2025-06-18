@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /app
 
-COPY Steam_Review_api/Steam_Review_api/Server/*.csproj ./
+COPY Steam_Review_api/Server/*.csproj ./
 RUN dotnet restore
 
 COPY Steam_Review_api/Steam_Review_api/Server/ ./
