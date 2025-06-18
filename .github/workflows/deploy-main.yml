@@ -32,7 +32,7 @@ jobs:
 
             options:
               ports: [5272]
-              dockerfile: Server/Dockerfile
+              dockerfile: Dockerfile
               env:
                 - name: DB_CONNECTION
                   value: ${{ secrets.DB_CONNECTION }}
