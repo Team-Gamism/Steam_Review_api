@@ -11,6 +11,9 @@ Steam 리뷰 CSV 파일을 전처리하고, MySQL DB에 저장한 후, 이를 AP
 - Cloudtype
 - Github Action
 
+<br>
+  
+
 ## 프로젝트 설명
 2025년 1학기 빅데이터 프로젝트.
 
@@ -33,10 +36,15 @@ create table game_review_data(
     INDEX idx_language (language)
 )
 ```
+
+<br>
+
 ## 배포
 배포 주소 : https://port-0-steam-review-api-mc0mbx5fdff774bd.sel5.cloudtype.app
 > Cloudtype 사용 배포
->
+
+<br>
+
 
 ## API
 
@@ -54,6 +62,8 @@ create table game_review_data(
 > 
 > 이 경우, 처음 접속 시 응답이 지연될 수 있으니 잠시 기다려 주세요.
 
+<br>
+
 ## 기여 방법
 이 프로젝트에 기여하고 싶으시다면, 아래 절차를 따라주세요:
 
@@ -64,6 +74,8 @@ create table game_review_data(
 5. 커밋 메시지를 명확하게 작성합니다. 예: `feat: 리뷰 필터 기능 추가`
 6. 본인의 GitHub 저장소로 푸시합니다.
 7. Pull Request(PR) 를 생성합니다:
+
+<br>
 
 >PR은 코드 리뷰 후 병합됩니다.
 >
