@@ -99,18 +99,6 @@ public class GameReviewRepository : IGameReviewRepository
         return await connection.QueryAsync<string>(sql);
     }
 
-    public async Task AddNewReviewAsync(GameReview review)
-    {
-        const string sql = @"
-            INSERT INTO game_review_data (review_id, game, year, review, sentiment, language)
-            VALUES (@ReviewId, @Game, @Year, @Review, @Sentiment, @Language);";
-
-        await using var connection = CreateConnection();
-        await connection.OpenAsync();
-        
-        await connection.ExecuteAsync(sql, review);
-    }
-
     public async Task<bool> ExistReviewIdAsync(int reviewId)
     {
         const string sql = @"

@@ -28,44 +28,6 @@ namespace Server.Controller
             return Ok("CSV 데이터가 DB에 저장되었습니다.");
         }
 
-        [HttpPost]
-        public async Task<ActionResult<AddReviewResponse>> AddReview([FromBody] AddReviewRequest? req)
-        {
-            if (req == null)
-                return BadRequest("리뷰 데이터를 확인하세요.");
-
-            var review = new GameReview
-            {
-                ReviewId = req.ReviewId,
-                Game = req.Game,
-                Year = req.Year,
-                Review = req.Review,
-                Sentiment = req.Sentiment.Trim().ToLowerInvariant(),
-                Language = req.Language
-            };
-
-            try
-            {
-                await _gameReviewService.AddNewGameReviewAsync(review);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return Conflict(ex.Message);
-            }
-
-            var response = new AddReviewResponse
-            {
-                ReviewId = review.ReviewId,
-                Message = "리뷰가 추가되었습니다."
-            };
-
-            return CreatedAtAction(nameof(GetReviewById), new { id = review.ReviewId }, response);
-        }
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetReviewById(int id)
         {
