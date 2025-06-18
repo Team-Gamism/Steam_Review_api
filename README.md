@@ -5,6 +5,10 @@ Steam 리뷰 CSV 파일을 전처리하고, MySQL DB에 저장한 후, 이를 AP
 
 <br>
 
+> 데이터셋 링크: https://www.kaggle.com/datasets/arashnic/game-review-dataset
+
+<br>
+
 ## 사용 기술
 - C#
 - ASP.NET Core
