@@ -1,12 +1,12 @@
 name: steam-review-api-2
 app: dotnet@auto
 options:
-  ports: "7192"
+  ports: "7000"
   env:
     - name: ConnectionStrings__DbConnection
       value: server=amond-server.kro.kr;port=3306;database=박현민;user=Sean-mn;password=1q2w3e4r
     - name: GOOGLE_RUNTIME_VERSION
-      value: 8.0.204
+      value: 8.0.411
 context:
   git:
     url: https://github.com/Team-Gamism/Steam_Review_api.git
