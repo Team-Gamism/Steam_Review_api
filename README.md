@@ -60,6 +60,8 @@ create table game_review_data(
 | GET    | `/api/review/{id}`                      | 리뷰 ID를 통한 리뷰 조회 |
 | GET    | `/api/review/games`    | 모든 리뷰가 적힌 게임 이름 조회 |
 | GET    | `/api/review/average?game={game}` | 게임 이름을 통한 평균 평점 조회 |
+| GET    | `/api/review` | 총 리뷰 ID 개수 조회 |
+| GET    | `/api/review/id` | 최소 리뷰 ID 값과 최대 리뷰 ID 값 조회 |
 
 ---
 
