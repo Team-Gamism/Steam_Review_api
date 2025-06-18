@@ -31,7 +31,7 @@ jobs:
             app: dockerfile
 
             options:
-              dockerfile: Dockerfile
+              dockerfile: Steam_Review_api/Server/Dockerfile
               ports: "7000"
               env:
                 - name: ConnectionStrings__DbConnection
