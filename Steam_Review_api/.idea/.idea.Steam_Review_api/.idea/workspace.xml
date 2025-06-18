@@ -9,8 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +56,7 @@
   "keyToString": {
     ".NET 실행 설정 프로파일.Server: http.executor": "Run",
     ".NET 실행 설정 프로파일.Server: https.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
     "Docker.Server/Dockerfile.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -71,7 +71,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Docker.Server/Dockerfile">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="Server: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Server/Server.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
@@ -116,7 +116,7 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Server/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
           <option name="imageTag" value="server" />
@@ -130,7 +130,7 @@
               </DockerPortBindingImpl>
             </list>
           </option>
-          <option name="sourceFilePath" value="Server/Dockerfile" />
+          <option name="sourceFilePath" value="Dockerfile" />
         </settings>
       </deployment>
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
@@ -149,7 +149,7 @@
       <item itemvalue=".NET 실행 설정 프로파일.Server: http" />
       <item itemvalue=".NET 실행 설정 프로파일.Server: https" />
       <item itemvalue="Docker.compose.yaml: Compose 배포" />
-      <item itemvalue="Docker.Server/Dockerfile" />
+      <item itemvalue="Docker.Dockerfile" />
     </list>
   </component>
   <component name="TaskManager">

@@ -19,7 +19,6 @@ obj/
 *.user
 *.suo
 **/charts
-**/docker-compose*
 **/node_modules
 **/npm-debug.log
 **/obj
