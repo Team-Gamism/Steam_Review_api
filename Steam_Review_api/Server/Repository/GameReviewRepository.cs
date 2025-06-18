@@ -54,6 +54,16 @@ public class GameReviewRepository : IGameReviewRepository
         return await connection.QueryFirstOrDefaultAsync<GameReview>(sql, new { ReviewId = reviewId });
     }
 
+    public async Task<int> GetTotalCountOfIdAsync()
+    {
+        const string sql = @"SELECT COUNT(*) FROM game_review_data";
+        
+        await using var connection = CreateConnection();
+        await connection.OpenAsync();
+        
+        return await connection.ExecuteScalarAsync<int>(sql);
+    }
+
     public async Task<IEnumerable<GameReview?>> GetReviewsByGameAsync(string steamId)
     {
         const string sql = @"

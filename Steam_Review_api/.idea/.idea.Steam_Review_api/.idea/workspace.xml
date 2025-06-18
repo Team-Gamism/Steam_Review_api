@@ -14,6 +14,8 @@
       <change beforePath="$PROJECT_DIR$/Server/Controller/GameReviewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Controller/GameReviewController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Repository/GameReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Repository/GameReviewRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Repository/Interface/IGameReviewRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Repository/Interface/IGameReviewRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Service/GameReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/GameReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Service/Interface/IGameReviewService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Service/Interface/IGameReviewService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +181,7 @@
       <workItem from="1750144120826" duration="5373000" />
       <workItem from="1750161289789" duration="3544000" />
       <workItem from="1750246373919" duration="4107000" />
-      <workItem from="1750287950922" duration="1122000" />
+      <workItem from="1750287950922" duration="1512000" />
     </task>
     <servers />
   </component>

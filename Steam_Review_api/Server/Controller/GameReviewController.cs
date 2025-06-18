@@ -11,11 +11,11 @@ namespace Server.Controller
     [Route("api/review")]
     public class GameReviewController : ControllerBase
     {
-        private readonly IGameReviewService _gameReviewService;
+        private readonly IGameReviewService _reviewService;
 
-        public GameReviewController(IGameReviewService gameReviewService)
+        public GameReviewController(IGameReviewService reviewService)
         {
-            _gameReviewService = gameReviewService;
+            _reviewService = reviewService;
         }
 
         [HttpPost("import")]
@@ -24,14 +24,21 @@ namespace Server.Controller
             if (string.IsNullOrEmpty(path))
                 return BadRequest("CSV 파일 경로를 입력하세요.");
 
-            await _gameReviewService.ImportCsvToDb(path);
+            await _reviewService.ImportCsvToDb(path);
             return Ok("CSV 데이터가 DB에 저장되었습니다.");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetTotalId()
+        {
+            var count = await _reviewService.GetTotalCountOfIdAsync();
+            return Ok(new { totalIdCount = count });
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetReviewById(int id)
         {
-            var review = await _gameReviewService.GetByIdAsync(id);
+            var review = await _reviewService.GetByIdAsync(id);
             if (review == null)
                 return NotFound();
 
@@ -44,7 +51,7 @@ namespace Server.Controller
             if (string.IsNullOrWhiteSpace(game))
                 return BadRequest("게임 이름을 입력하세요.");
 
-            var avgSentiment = await _gameReviewService.GetAverageSentimentAsync(game);
+            var avgSentiment = await _reviewService.GetAverageSentimentAsync(game);
             if (avgSentiment == null)
                 return NotFound("해당 게임에 대한 리뷰가 없습니다.");
 
@@ -54,7 +61,7 @@ namespace Server.Controller
         [HttpGet("games")]
         public async Task<IActionResult> GetAllGamesAsync()
         {
-            var games = await _gameReviewService.GetAllGamesAsync();
+            var games = await _reviewService.GetAllGamesAsync();
             return Ok(games);
         }
 
@@ -64,7 +71,7 @@ namespace Server.Controller
             if (string.IsNullOrWhiteSpace(game))
                 return BadRequest("게임 이름을 입력하세요.");
 
-            var stats = await _gameReviewService.GetStatisticsByGameAsync(game);
+            var stats = await _reviewService.GetStatisticsByGameAsync(game);
             if (stats.TotalReviews == 0)
                 return NotFound($"'{game}'에 대한 리뷰가 없습니다.");
 
