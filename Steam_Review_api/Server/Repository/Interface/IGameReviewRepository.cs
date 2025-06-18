@@ -10,5 +10,4 @@ public interface IGameReviewRepository
     Task<IEnumerable<GameReview?>> GetReviewsByGameAsync(string steamId);
     Task<double?> GetAverageSentimentAsync(string game);
     Task<IEnumerable<string>> GetDistinctGamesAsync();
-    Task<bool> ExistReviewIdAsync(int reviewId);
 }

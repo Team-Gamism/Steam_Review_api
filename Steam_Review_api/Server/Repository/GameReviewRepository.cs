@@ -98,19 +98,4 @@ public class GameReviewRepository : IGameReviewRepository
         
         return await connection.QueryAsync<string>(sql);
     }
-
-    public async Task<bool> ExistReviewIdAsync(int reviewId)
-    {
-        const string sql = @"
-        SELECT EXISTS(
-            SELECT 1 
-            FROM game_review_data 
-            WHERE review_id = @ReviewId
-        );";
-    
-        await using var connection = CreateConnection();
-        await connection.OpenAsync();
-    
-        return await connection.ExecuteScalarAsync<bool>(sql, new { ReviewId = reviewId });
-    }
 }
