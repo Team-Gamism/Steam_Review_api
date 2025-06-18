@@ -6,7 +6,9 @@ options:
   env:
     - name: DB_CONNECTION
       value: ...
-  args: []
+  args:
+    - name: BUILD_CONFIGURATION
+      value: Release
 context:
   git:
     url: https://github.com/Team-Gamism/Steam_Review_api.git
