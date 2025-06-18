@@ -39,5 +39,5 @@ jobs:
                   value: Release
             context:
               git:
-                url: git@github.com:Team-Gamism/Steam_Review_api.git
+                url: git@github.com:${{ github.repository }}.git
                 ref: ${{ github.ref }}
