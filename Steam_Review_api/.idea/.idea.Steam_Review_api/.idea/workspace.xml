@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/steam-review-api-2.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/steam-review-api-2.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Steam_Review_api/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunManager" selected=".NET 실행 설정 프로파일.Server: https">
     <configuration name="Server: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Server/Server.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
@@ -176,7 +178,7 @@
       <workItem from="1750127015873" duration="7137000" />
       <workItem from="1750144120826" duration="5373000" />
       <workItem from="1750161289789" duration="3544000" />
-      <workItem from="1750246373919" duration="1365000" />
+      <workItem from="1750246373919" duration="1870000" />
     </task>
     <servers />
   </component>
