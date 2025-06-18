@@ -1,9 +1,8 @@
 ﻿services:
   server:
     build:
-      context: ./Server
       dockerfile: Dockerfile
     ports:
       - "5272:5272"
     env_file:
-      - ./Server/.env
+      - .env
