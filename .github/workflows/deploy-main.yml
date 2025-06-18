@@ -31,8 +31,8 @@ jobs:
             app: dockerfile
 
             options:
-              dockerfile: Server/Dockerfile
-              ports: "7192"
+              dockerfile: Dockerfile
+              ports: "7000"
               env:
                 - name: ConnectionStrings__DbConnection
                   value: ${{ secrets.DB_CONNECTION }}
