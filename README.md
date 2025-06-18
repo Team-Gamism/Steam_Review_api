@@ -11,6 +11,7 @@ Steam 리뷰 CSV 파일을 전처리하고, MySQL DB에 저장한 후, 이를 AP
 
 ## 사용 기술
 - C#
+- .NET 8
 - ASP.NET Core
 - MySQL
 - Python
