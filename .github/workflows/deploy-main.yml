@@ -1,23 +1,19 @@
 name: Deploy to cloudtype
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Connect deploy key
         uses: cloudtype-github-actions/connect@v1
         with:
           token: ${{ secrets.CLOUDTYPE_TOKEN }}
           ghtoken: ${{ secrets.GHP_TOKEN }}
-
       - name: Deploy
         uses: cloudtype-github-actions/deploy@v1
         with:
@@ -25,24 +21,17 @@ jobs:
           project: b01080080329/steam-review-api
           stage: main
           yaml: >
-            name: steam-review-api
+            name: steam-review-api-2
 
-            app: dockerfile
+            app: dotnet@auto
 
             options:
-              dockerfile: Steam_Review_api/Server/Dockerfile
-              ports: "5272"
+              ports: "7192"
               env:
                 - name: ConnectionStrings__DbConnection
                   value: ${{ secrets.DB_CONNECTION }}
-                - name: PORT
-                  value: "5272"
-                - name: ASPNETCORE_URLS
-                  value: http://+:5272
-              args:
-                - name: BUILD_CONFIGUATION
-                  value: Release
-
+                - name: GOOGLE_RUNTIME_VERSION
+                  value: "9.0.100"
             context:
               git:
                 url: git@github.com:${{ github.repository }}.git
