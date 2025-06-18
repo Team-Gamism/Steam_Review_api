@@ -96,7 +96,6 @@ namespace Server.Controller
             return Ok(games);
         }
 
-        [AllowAnonymous]
         [HttpGet("game")]
         public async Task<IActionResult> GetGameStatisticsAsync([FromQuery] string game)
         {
