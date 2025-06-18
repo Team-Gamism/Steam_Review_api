@@ -2,7 +2,7 @@ name: steam-review-api
 app: dockerfile
 options:
   ports: "5272"
-  dockerfile: Steam_Review_api/Dockerfile
+  dockerfile: Steam_Review_api/Server/Dockerfile
   env:
     - name: DB_CONNECTION
       value: ""
