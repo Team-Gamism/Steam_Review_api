@@ -11,4 +11,4 @@ context:
   git:
     url: https://github.com/Team-Gamism/Steam_Review_api.git
     branch: main
-    path: Steam_Review_api
+    path: Steam_Review_api/Steam_Review_api
