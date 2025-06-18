@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="" />
+    <list default="true" id="7c6658ff-7997-47cb-8bdb-f1d454d23b86" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/steam-review-api-2.yaml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +175,7 @@
       <workItem from="1750127015873" duration="7137000" />
       <workItem from="1750144120826" duration="5373000" />
       <workItem from="1750161289789" duration="3544000" />
-      <workItem from="1750246373919" duration="2647000" />
+      <workItem from="1750246373919" duration="3442000" />
     </task>
     <servers />
   </component>
