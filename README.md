@@ -8,7 +8,7 @@ Steam 리뷰 CSV 파일을 전처리하고, MySQL DB에 저장한 후, 이를 AP
 - ASP.NET Core
 - MySQL
 - Python
-- CLOUDTYPE
+- Cloudtype
 - Github Action
 
 ## 프로젝트 설명
@@ -35,7 +35,7 @@ create table game_review_data(
 ```
 ## 배포
 배포 주소 : https://port-0-steam-review-api-mc0mbx5fdff774bd.sel5.cloudtype.app
-> CLOUDTYPE 사용 배포
+> Cloudtype 사용 배포
 >
 
 ## API
