@@ -33,6 +33,11 @@ public class GameReviewService : IGameReviewService
         return await _gameReviewRepository.GetTotalCountOfIdAsync();
     }
 
+    public async Task<IdRange?> GetIdRangeAsync()
+    {
+        return await _gameReviewRepository.GetIdRangeAsync();
+    }
+
     public async Task<double?> GetAverageSentimentAsync(string game)
     {
         return await _gameReviewRepository.GetAverageSentimentAsync(game);

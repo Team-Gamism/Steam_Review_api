@@ -44,6 +44,17 @@ namespace Server.Controller
 
             return Ok(review);
         }
+        
+        [HttpGet("id")]
+        public async Task<IActionResult> GetIdRange()
+        {
+            var result = await _reviewService.GetIdRangeAsync();
+            
+            if (result == null)
+                return NotFound("Id가 DB에 없습니다.");
+            
+            return Ok(result);
+        }
 
         [HttpGet("average")]
         public async Task<IActionResult> GetAverageSentimentAsync([FromQuery] string game)

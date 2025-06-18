@@ -64,6 +64,16 @@ public class GameReviewRepository : IGameReviewRepository
         return await connection.ExecuteScalarAsync<int>(sql);
     }
 
+    public async Task<IdRange?> GetIdRangeAsync()
+    {
+        const string sql = @"SELECT MIN(review_id) AS MinId, MAX(review_id) AS MaxId FROM  game_review_data";
+        
+        await using var connection = CreateConnection();
+        await connection.OpenAsync();
+        
+        return await connection.QueryFirstOrDefaultAsync<IdRange>(sql); 
+    }
+
     public async Task<IEnumerable<GameReview?>> GetReviewsByGameAsync(string steamId)
     {
         const string sql = @"
