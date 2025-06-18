@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Model.Dto.Request;
 using Server.Model.Dto.Response;
@@ -6,8 +7,8 @@ using Server.Service.Interface;
 
 namespace Server.Controller
 {
-    [Route("api/review")]
     [ApiController]
+    [Route("api/review")]
     public class GameReviewController : ControllerBase
     {
         private readonly IGameReviewService _gameReviewService;
@@ -95,6 +96,7 @@ namespace Server.Controller
             return Ok(games);
         }
 
+        [AllowAnonymous]
         [HttpGet("game")]
         public async Task<IActionResult> GetGameStatisticsAsync([FromQuery] string game)
         {
