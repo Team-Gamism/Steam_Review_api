@@ -3,6 +3,8 @@ Steam 리뷰 데이터를 기반으로 한 API 서버입니다.
 
 Steam 리뷰 CSV 파일을 전처리하고, MySQL DB에 저장한 후, 이를 API로 제공합니다.
 
+<br>
+
 ## 사용 기술
 - C#
 - ASP.NET Core
